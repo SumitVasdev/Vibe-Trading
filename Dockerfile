@@ -35,6 +35,9 @@ RUN pip install --no-cache-dir -r agent/requirements.txt
 COPY pyproject.toml LICENSE README.md ./
 COPY agent/ agent/
 
+# Copy Telegram bit
+COPY bot.py /app/
+
 # Copy built frontend
 COPY --from=frontend-build /app/frontend/dist frontend/dist
 
